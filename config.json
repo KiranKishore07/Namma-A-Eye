@@ -1,0 +1,14 @@
+{
+  "video_url": "ngrok_link_goes_here_ending_with_/video",
+  "model_weights_path": "your_trained_best_model.pt",
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 587,
+  "sender_email": "sender_email@gmail.com",
+  "sender_password": "your_password",
+  "recipient_email": "recipient_email@gmail.com",
+  "db_host": "your_database_host",
+  "db_port": 12345,
+  "db_user": "root",
+  "db_password": "your_database_password",
+  "db_name": "your_database_name"
+}
