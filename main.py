@@ -57,7 +57,7 @@ def video_capture():
 
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         _, image_data = cv2.imencode(".jpg", frame)
-        detected_objects = model_predict(frame)
+        detected_objects = model_predict(image_data)
 
         for detected_object in detected_objects:
             class_name = detected_object['class']
@@ -66,8 +66,8 @@ def video_capture():
 
             if class_name == 'Intruder' and probability > 0.5:
                 timestamp = datetime.datetime.now(pytz.timezone('Asia/Kolkata')).strftime('%Y-%m-%d %H:%M:%S')
-                mail_trigger(frame, timestamp, config)
-                database_entry(frame, timestamp, config)
+                mail_trigger(image_data, timestamp, config)
+                database_entry(image_data, timestamp, config)
         break
 
     delay_time = 30
