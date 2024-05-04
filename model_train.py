@@ -16,9 +16,9 @@ def model_train():
       ensuring a clean training environment.
 
       The function uses the YOLOv8-L model loaded from the 'yolov8l.pt' file.
-      It trains the model for a specified number of epochs (50 in this case) using the provided dataset file ('data.yaml').
+      It trains the model for a specified number of epochs (30 in this case) using the provided dataset file ('data.yaml').
 
-      The training process uses the Adam optimizer with a learning rate of 0.00001 and learning rate decay factor (lrf) of 1.
+      The training process uses the Adam optimizer with an initial learning rate of 0.00001 and the final learning rate decay factor (lrf) of 1.
   """
   locale.getpreferredencoding = lambda: "UTF-8"
   !rm -rf runs/detect/train
