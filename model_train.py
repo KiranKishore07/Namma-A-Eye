@@ -24,4 +24,7 @@ def model_train():
   !rm -rf runs/detect/train
 
   model = YOLO("yolov8l.pt")
-  model.train(data="path_to_yaml_file_goes_here", epochs=50, optimizer = 'Adam', lr0=0.00001, lrf=1)
+  model.train(data="path_to_yaml_file_goes_here",
+            epochs=30, optimizer = 'Adam', lr0=0.00001, lrf=1, augment=True,
+            patience=5, weight_decay=0.0001, dropout=0.1, imgsz=416, cache=True)
+  
